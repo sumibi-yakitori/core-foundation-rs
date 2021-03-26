@@ -514,6 +514,10 @@ impl<'tap_life> CGEventTap<'tap_life> {
     pub fn enable(&self) {
         unsafe { CGEventTapEnable(self.mach_port.as_concrete_TypeRef(), true) }
     }
+
+    pub fn disable(&self) {
+        unsafe { CGEventTapEnable(self.mach_port.as_concrete_TypeRef(), false) }
+    }
 }
 
 foreign_type! {
